@@ -1,0 +1,8 @@
+langchain
+chromadb
+sentence-transformers
+llama-cpp-python
+fastapi
+uvicorn
+python-dotenv
+python-telegram-bot
