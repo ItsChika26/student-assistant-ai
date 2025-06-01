@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Logs and debug files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Data and database files
+data/
+chroma_db/
+
+# Environment variables
+.env
+
+# Cache files
+*.cache
+*.pkl
+
+# Test coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore requirements lock files (if not needed)
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
