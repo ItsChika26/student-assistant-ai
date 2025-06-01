@@ -15,6 +15,7 @@ This application is a chatbot powered by LangChain and ChromaDB. It ingests know
 ## Installation
 
 1. **Set up a virtual environment**:
+
    ```bash
    python -m venv venv
    source venv/bin/activate
@@ -28,25 +29,37 @@ This application is a chatbot powered by LangChain and ChromaDB. It ingests know
 ## Usage
 
 ### Step 1: Start the Ollama server
+
 Run the following command to start the Ollama server:
+
 ```bash
 ollama serve
 ```
 
 ### Step 2: Ingest documents into the database
+
 Run the ingestion script to process and store the knowledge base documents:
+
 ```bash
 python -m ingest.ingest_docs
 ```
+
 Check the logs to ensure the ingestion was successful.
 
 ### Step 3: Start the main application
+
 In a separate terminal, run the main application:
+
 ```bash
 python main.py
 ```
 
-### Step 4: Make queries
+### Step 4: Choose the mode - cli or telegram bot
+
+Telegram-bot name is mini_wut, username - @mini_wut_bot
+
+### Step 5: Make queries
+
 You can now interact with the chatbot. If the query matches the knowledge base, the chatbot will use the ingested data. Otherwise, it will perform a general web search.
 
 ## Project Structure
