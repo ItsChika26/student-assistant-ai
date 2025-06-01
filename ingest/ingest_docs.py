@@ -1,10 +1,11 @@
 import glob
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain_community.text_splitter import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from .json_loader import load_json_documents
 import logging
 
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 def ingest_documents():
     json_files = glob.glob('./data/**/*.json', recursive=True)
@@ -25,7 +26,7 @@ def ingest_documents():
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
     chunks = splitter.split_documents(docs)
 
-    embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+    embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     db = Chroma.from_documents(chunks, embedding_model, persist_directory="./chroma_db")
     db.persist()
     logger.info("✅ Documents ingested and stored in vector DB")
